@@ -7,4 +7,7 @@
 
     <!-- boton para editar -->
     <a href="{% url 'publication-update' publication.pk %}">Actualizar</a>
+
+    <!-- boton para eliminar -->
+     <a href="{% url 'publication-delete' publication.pk %}">Eliminar</a>
 {% endblock content %}
