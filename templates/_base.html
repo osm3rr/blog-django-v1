@@ -10,6 +10,12 @@
             <a href="{% url 'publication-create' %}">Nueva publicación</a>
         </div>
     </header>
+    {% if user.is_authenticated %}
+        <p>Hola {{ user.username }}</p>
+    {% else %}
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+    {% endif %}
+
     {% block content %}
     
     {% endblock content %}
