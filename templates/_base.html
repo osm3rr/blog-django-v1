@@ -12,6 +12,11 @@
     </header>
     {% if user.is_authenticated %}
         <p>Hola {{ user.username }}</p>
+        <!-- logout link -->
+         <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Cerrar sesión</button>
+         </form>
     {% else %}
         <a href="{% url 'login' %}">Iniciar sesión</a>
     {% endif %}
